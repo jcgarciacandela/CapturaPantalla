@@ -33,3 +33,5 @@ build/
 .vscode/
 /capturas/
 /capturas/
+/salida.txt
+/salida_error.txt
