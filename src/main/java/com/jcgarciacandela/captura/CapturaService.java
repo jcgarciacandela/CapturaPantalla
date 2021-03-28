@@ -18,7 +18,8 @@ public class CapturaService {
     @Value("${basePath}")
     private String path;
 
-    @Scheduled(fixedRate = 15000)
+
+    @Scheduled(fixedRate = 30000)
     private void capturaExec() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
@@ -29,6 +30,7 @@ public class CapturaService {
                     new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 
             File file = new File(path + fileName);
+            System.out.println(file);
             ImageIO.write(screencapture, "png", file);
         } catch (Exception ex) {
             ex.printStackTrace();
